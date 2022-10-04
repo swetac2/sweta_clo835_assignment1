@@ -68,14 +68,14 @@ resource "aws_security_group" "my_sg" {
   }
 
   ingress {
-    description = "Http"
+    description = "Http from everywhere"
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    description = "Http"
+    description = "Http from everywhere"
     from_port   = 8081
     to_port     = 8081
     protocol    = "tcp"
@@ -95,14 +95,14 @@ resource "aws_security_group" "my_sg" {
 }
 
 resource "aws_eip" "my_eip" {
-  instance = aws_instance.web.id
+  instance = aws_instance.my_amazon.id
   vpc      = true
 }
 
-resource "aws_ecr_repository" "cats" {
-  name                 = "catV2"
+resource "aws_ecr_repository" "cat" {
+  name                 = "catv2"
 } 
 
-resource "aws_ecr_repository" "dogs" {
-  name                 = "dogV2"
+resource "aws_ecr_repository" "dog" {
+  name                 = "dogv2"
 }
