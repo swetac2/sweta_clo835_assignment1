@@ -36,7 +36,7 @@ jobs:
         ls -ltra
         # Build docker image
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        # Unit testcat
+        # Unit testcat1
         docker run -d -p 8080:80 --name catsapp $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
