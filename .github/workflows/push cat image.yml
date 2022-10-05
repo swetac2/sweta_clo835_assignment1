@@ -34,7 +34,7 @@ jobs:
       run: |
         cd cats/
         ls -ltra
-        # Build docker image
+        # Build docker image1
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit testcat1
         docker run -d -p 8080:80 --name cats $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
